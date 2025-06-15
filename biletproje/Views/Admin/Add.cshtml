@@ -1,6 +1,6 @@
 ﻿@model Movie
 @{
-	ViewData["Title"] = "Add New Title";
+        ViewData["Title"] = "Yeni Başlık Ekle";
 }
 <partial name="_AdminNavbarPartial" />
 <div class="padding-top min-vh-100">
@@ -12,73 +12,73 @@
 		<form method="post" class="movie-form" autocomplete="off">
 			<div class="row g-3">
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Title" class="form-label fw-semibold">Movie Title <span class="text-danger">*</span></label>
-					<input type="text" asp-for="Title" class="form-control form-control-lg" placeholder="Enter movie title here" required>
+                                        <label asp-for="Title" class="form-label fw-semibold">Film Başlığı <span class="text-danger">*</span></label>
+                                        <input type="text" asp-for="Title" class="form-control form-control-lg" placeholder="Film başlığını girin" required>
 					<span asp-validation-for="Title" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="ReleaseDate" class="form-label fw-semibold">Release Date <span class="text-danger">*</span></label>
+                                        <label asp-for="ReleaseDate" class="form-label fw-semibold">Çıkış Tarihi <span class="text-danger">*</span></label>
 					<input type="date" asp-for="ReleaseDate" class="form-control form-control-lg" required>
 					<span asp-validation-for="ReleaseDate" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Genres" class="form-label fw-semibold">Genres <span class="text-danger">*</span></label>
-					<input type="text" asp-for="Genres" class="form-control form-control-lg" placeholder="Enter genres here" required>
+                                        <label asp-for="Genres" class="form-label fw-semibold">Türler <span class="text-danger">*</span></label>
+                                        <input type="text" asp-for="Genres" class="form-control form-control-lg" placeholder="Türleri girin" required>
 					<span asp-validation-for="Genres" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Duration" class="form-label fw-semibold">Duration <span class="text-danger">*</span></label>
-					<input type="text" asp-for="Duration" class="form-control form-control-lg" placeholder="Enter duration here" required>
+                                        <label asp-for="Duration" class="form-label fw-semibold">Süre <span class="text-danger">*</span></label>
+                                        <input type="text" asp-for="Duration" class="form-control form-control-lg" placeholder="Süreyi girin" required>
 					<span asp-validation-for="Duration" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Rating" class="form-label fw-semibold">Rating <span class="text-danger">*</span></label>
+                                        <label asp-for="Rating" class="form-label fw-semibold">Puan <span class="text-danger">*</span></label>
 					<select asp-for="Rating" asp-items="Html.GetEnumSelectList<Rating>()" class="form-select form-select-lg" required></select>
 					<span asp-validation-for="Rating" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Trailer" class="form-label fw-semibold">Trailer URL <span class="text-danger">*</span></label>
-					<input type="url" asp-for="Trailer" class="form-control form-control-lg" placeholder="Enter trailer URL here" required>
+                                        <label asp-for="Trailer" class="form-label fw-semibold">Fragman URL'si <span class="text-danger">*</span></label>
+                                        <input type="url" asp-for="Trailer" class="form-control form-control-lg" placeholder="Fragman URL'sini girin" required>
 					<span asp-validation-for="Trailer" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Director" class="form-label fw-semibold">Director <span class="text-danger">*</span></label>
-					<input type="text" asp-for="Director" class="form-control form-control-lg" placeholder="Enter director name here" required>
+                                        <label asp-for="Director" class="form-label fw-semibold">Yönetmen <span class="text-danger">*</span></label>
+                                        <input type="text" asp-for="Director" class="form-control form-control-lg" placeholder="Yönetmen adını girin" required>
 					<span asp-validation-for="Director" class="text-danger d-block mt-2k"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Cast" class="form-label fw-semibold">Cast <span class="text-danger">*</span></label>
-					<input type="text" asp-for="Cast" class="form-control form-control-lg" placeholder="Enter top cast here" required>
+                                        <label asp-for="Cast" class="form-label fw-semibold">Oyuncular <span class="text-danger">*</span></label>
+                                        <input type="text" asp-for="Cast" class="form-control form-control-lg" placeholder="Başrol oyuncularını girin" required>
 					<span asp-validation-for="Cast" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Poster" class="form-label fw-semibold">Poster URL <span class="text-danger">*</span></label>
-					<input type="url" asp-for="Poster" class="form-control form-control-lg" placeholder="Enter poster URL here" required>
+                                        <label asp-for="Poster" class="form-label fw-semibold">Poster URL'si <span class="text-danger">*</span></label>
+                                        <input type="url" asp-for="Poster" class="form-control form-control-lg" placeholder="Poster URL'sini girin" required>
 					<span asp-validation-for="Poster" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="Backdrop" class="form-label fw-semibold">Backdrop URL <span class="text-danger">*</span></label>
-					<input type="url" asp-for="Backdrop" class="form-control form-control-lg" placeholder="Enter backdrop image URL here" required>
+                                        <label asp-for="Backdrop" class="form-label fw-semibold">Arka Plan URL'si <span class="text-danger">*</span></label>
+                                        <input type="url" asp-for="Backdrop" class="form-control form-control-lg" placeholder="Arka plan görseli URL'sini girin" required>
 					<span asp-validation-for="Backdrop" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="StartDate" class="form-label fw-semibold">Start Date <span class="text-danger">*</span></label>
-					<input type="date" asp-for="StartDate" class="form-control form-control-lg" placeholder="Enter start date here" required>
+                                        <label asp-for="StartDate" class="form-label fw-semibold">Başlangıç Tarihi <span class="text-danger">*</span></label>
+                                        <input type="date" asp-for="StartDate" class="form-control form-control-lg" placeholder="Başlangıç tarihini girin" required>
 					<span asp-validation-for="StartDate" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<label asp-for="EndDate" class="form-label fw-semibold">End Date <span class="text-danger">*</span></label>
-					<input type="date" asp-for="EndDate" class="form-control form-control-lg" placeholder="Enter end date here" required>
+                                        <label asp-for="EndDate" class="form-label fw-semibold">Bitiş Tarihi <span class="text-danger">*</span></label>
+                                        <input type="date" asp-for="EndDate" class="form-control form-control-lg" placeholder="Bitiş tarihini girin" required>
 					<span asp-validation-for="EndDate" class="text-danger d-block mt-2"></span>
 				</div>
 				<div class="col-12">
-					<label asp-for="Overview" class="form-label fw-semibold">Overview <span class="text-danger">*</span></label>
-					<textarea asp-for="Overview" cols="30" rows="10" class="form-control form-control-lg" placeholder="Enter overview of the movie here" required></textarea>
+                                        <label asp-for="Overview" class="form-label fw-semibold">Açıklama <span class="text-danger">*</span></label>
+                                        <textarea asp-for="Overview" cols="30" rows="10" class="form-control form-control-lg" placeholder="Filmin açıklamasını girin" required></textarea>
 					<span asp-validation-for="Overview" class="text-danger mt-2 d-block"></span>
 				</div>
 				<div class="col-12">
 					<div class="d-grid">
-						<button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Add</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Ekle</button>
 					</div>
 				</div>
 			</div>

@@ -8,16 +8,16 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link @(Context.Request.Path.ToString().ToLower().EndsWith("add") ? "active" : "")" asp-controller="Admin" asp-action="Add">Add</a>
+                                                <a class="nav-link @(Context.Request.Path.ToString().ToLower().EndsWith("add") ? "active" : "")" asp-controller="Admin" asp-action="Add">Ekle</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-lg-3 @(Context.Request.Path.ToString().ToLower().EndsWith("movies") ? "active" : "")" asp-controller="Admin" asp-action="Movies">Movies</a>
+                                                <a class="nav-link ms-lg-3 @(Context.Request.Path.ToString().ToLower().EndsWith("movies") ? "active" : "")" asp-controller="Admin" asp-action="Movies">Filmler</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-lg-3 @(Context.Request.Path.ToString().ToLower().EndsWith("account") ? "active" : "")" asp-controller="Admin" asp-action="Account">Account</a>
+                                                <a class="nav-link ms-lg-3 @(Context.Request.Path.ToString().ToLower().EndsWith("account") ? "active" : "")" asp-controller="Admin" asp-action="Account">Hesap</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-lg-3" asp-controller="Admin" asp-action="Logout">Logout</a>
+                                                <a class="nav-link ms-lg-3" asp-controller="Admin" asp-action="Logout">Çıkış</a>
 					</li>
 				</ul>
 			</div>

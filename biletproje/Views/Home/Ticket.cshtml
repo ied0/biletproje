@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Ticket";
+        ViewData["Title"] = "Bilet";
 	ViewData["NavbarStyle"] = "bg-white border-bottom";
 }
 @model TicketViewModel
@@ -16,7 +16,7 @@
 			<div class="toprint col-8 col-sm-8 col-md-6 col-lg-3">
 				<div class="box rounded-1 border">
 					<div class="box-header p-3 bg-white border-bottom-dashed rounded-1">
-						<h5 class="fw-semibold mb-0 text-uppercase text-primary">Ticket <span class="text-black">N°@Model.TicketNumber.ToString()</span></h5>
+                                                <h5 class="fw-semibold mb-0 text-uppercase text-primary">Bilet <span class="text-black">No @Model.TicketNumber.ToString()</span></h5>
 					</div>
 					<div class="box-body bg-light-subtle rounded-1 rounded-top-0 ticket">
 						<div class="row gx-1 align-items-center">
@@ -39,7 +39,7 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-8 col-sm-8 col-md-6 col-lg-3 text-center d-grid">
-				<a class="btn btn-primary btn-block text-uppercase fw-medium">Download Ticket</a>
+                                <a class="btn btn-primary btn-block text-uppercase fw-medium">Bileti İndir</a>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 ﻿@model AdminAccountViewModel
 @{
-	ViewData["Title"] = "Account Settings";
+        ViewData["Title"] = "Hesap Ayarları";
 }
 <partial name="_AdminNavbarPartial" />
 <div class="padding-top min-vh-100">
@@ -22,7 +22,7 @@
 						</div>
 					}
 					<div class="mb-3">
-						<label asp-for="Username" class="form-label fw-semibold">Username</label>
+                                                <label asp-for="Username" class="form-label fw-semibold">Kullanıcı adı</label>
 						<div class="position-relative">
 							<input type="text" asp-for="Username" class="form-control form-control-lg" disabled>
 							<div class="form-control-icon">
@@ -32,7 +32,7 @@
 						<span asp-validation-for="Username" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="Email" class="form-label fw-semibold">Email address</label>
+                                                <label asp-for="Email" class="form-label fw-semibold">E-posta adresi</label>
 						<div class="position-relative">
 							<input type="email" asp-for="Email" class="form-control form-control-lg" disabled>
 							<div class="form-control-icon">
@@ -42,9 +42,9 @@
 						<span asp-validation-for="Email" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="CurrentPassword" class="form-label fw-semibold">Current password <span class="text-danger">*</span></label>
+                                                <label asp-for="CurrentPassword" class="form-label fw-semibold">Mevcut şifre <span class="text-danger">*</span></label>
 						<div class="position-relative">
-							<input type="password" asp-for="CurrentPassword" class="form-control form-control-lg" placeholder="Enter password here">
+                                                        <input type="password" asp-for="CurrentPassword" class="form-control form-control-lg" placeholder="Şifrenizi girin">
 							<div class="form-control-icon">
 								<i class='bx bx-lock-alt'></i>
 							</div>
@@ -52,9 +52,9 @@
 						<span asp-validation-for="CurrentPassword" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="NewPassword" class="form-label fw-semibold">New password <span class="text-danger">*</span></label>
+                                                <label asp-for="NewPassword" class="form-label fw-semibold">Yeni şifre <span class="text-danger">*</span></label>
 						<div class="position-relative">
-							<input type="password" asp-for="NewPassword" class="form-control form-control-lg" placeholder="Enter new password here">
+                                                        <input type="password" asp-for="NewPassword" class="form-control form-control-lg" placeholder="Yeni şifreyi girin">
 							<div class="form-control-icon">
 								<i class='bx bx-lock-alt'></i>
 							</div>
@@ -62,9 +62,9 @@
 						<span asp-validation-for="NewPassword" class="text-danger mt-2 d-block"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="ConfirmNewPassword" class="form-label fw-semibold">Confirm new password <span class="text-danger">*</span></label>
+                                                <label asp-for="ConfirmNewPassword" class="form-label fw-semibold">Yeni şifreyi onayla <span class="text-danger">*</span></label>
 						<div class="position-relative">
-							<input type="password" asp-for="ConfirmNewPassword" class="form-control form-control-lg" placeholder="Confirm new password here">
+                                                        <input type="password" asp-for="ConfirmNewPassword" class="form-control form-control-lg" placeholder="Yeni şifreyi tekrar girin">
 							<div class="form-control-icon">
 								<i class='bx bx-lock-alt'></i>
 							</div>
@@ -72,7 +72,7 @@
 						<span asp-validation-for="ConfirmNewPassword" class="text-danger mt-2 d-block"></span>
 					</div>
 					<div class="d-grid">
-						<button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Save</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Kaydet</button>
 					</div>
 				</form>
 			</div>

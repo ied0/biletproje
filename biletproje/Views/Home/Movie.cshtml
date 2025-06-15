@@ -8,7 +8,7 @@
 <div class="padding-top min-vh-100">
 	<div class="container my-4">
 		<div class="section-title d-flex align-items-center gap-4 mb-3" data-aos="fade-up">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Movie Details</h2>
+                        <h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Film Detayları</h2>
 			<div class="line"></div>
 		</div>
 		<div class="row gx-4 mt-4">
@@ -19,28 +19,28 @@
 				@if (Model.Movie.StartDate <= DateTime.Now)
 				{
 					<div class="d-grid">
-						<button data-bs-toggle="modal" data-bs-target="#ticketModal" class="btn btn-primary btn-block text-uppercase fw-semibold py-2 rounded-top-0"><i class="fa-solid fa-ticket me-2"></i>Get Ticket</button>
+                                                <button data-bs-toggle="modal" data-bs-target="#ticketModal" class="btn btn-primary btn-block text-uppercase fw-semibold py-2 rounded-top-0"><i class="fa-solid fa-ticket me-2"></i>Bilet Al</button>
 					</div>
 					<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered modal-sm">
 							<div class="modal-content overflow-hidden rounded-1">
 								<div class="modal-header">
-									<h1 class="modal-title fw-semibold fs-5" id="exampleModalLabel"><i class="fa-solid fa-ticket me-2 text-primary"></i>Get Ticket</h1>
+                                                                        <h1 class="modal-title fw-semibold fs-5" id="exampleModalLabel"><i class="fa-solid fa-ticket me-2 text-primary"></i>Bilet Al</h1>
 								</div>
 								<form asp-controller="Home" asp-action="Checkout" method="post" class="normal-form">
 									<div class="modal-body bg-light pt-2">
 										<div class="mb-2">
-											<label asp-for="@Model.SelectedShowdate" class="form-label fw-medium mb-1">Screening Date</label>
+                                                                               <label asp-for="@Model.SelectedShowdate" class="form-label fw-medium mb-1">Gösterim Tarihi</label>
 											<input asp-for="@Model.SelectedShowdate" type="date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" max="@Model.Movie.EndDate.ToString("yyyy-MM-dd")" required>
 										</div>
 										<div class="">
-											<label asp-for="@Model.SelectedShowtime" class="form-label fw-medium mb-1">Screening Time</label>
+                                                                               <label asp-for="@Model.SelectedShowtime" class="form-label fw-medium mb-1">Gösterim Saati</label>
 											<select asp-for="@Model.SelectedShowtime" asp-items="@Model.Showtimes" class="form-select" required></select>
 										</div>
 									</div>
 									<div class="modal-footer">
 										<div class="d-flex justify-content-end">
-											<button type="submit" class="link-button fw-semibold text-uppercase d-inline-flex">Checkout</button>
+                                                                               <button type="submit" class="link-button fw-semibold text-uppercase d-inline-flex">Ödeme</button>
 										</div>
 									</div>
 								</form>
@@ -59,27 +59,27 @@
 				<div class="bg-light-subtle border border rounded-1 p-3 mb-3">
 					<table class="details-table">
 						<tr>
-							<td><span class="fw-semibold">Release date</span></td>
+                                                        <td><span class="fw-semibold">Yayın tarihi</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td>@Model.Movie.ReleaseDate.ToString("MM/dd/yyyy")</td>
 						</tr>
 						<tr>
-							<td><span class="fw-semibold">Director</span></td>
+                                                        <td><span class="fw-semibold">Yönetmen</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td>@Model.Movie.Director</td>
 						</tr>
 						<tr>
-							<td><span class="fw-semibold">Top cast</span></td>
+                                                        <td><span class="fw-semibold">Oyuncular</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td>@Model.Movie.Cast</td>
 						</tr>
 						<tr>
-							<td><span class="fw-semibold">Start date</span></td>
+                                                        <td><span class="fw-semibold">Başlangıç tarihi</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td>@Model.Movie.StartDate.ToString("MM/dd/yyyy")</td>
 						</tr>
 						<tr>
-							<td><span class="fw-semibold">End date</span></td>
+                                                        <td><span class="fw-semibold">Bitiş tarihi</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td>@Model.Movie.EndDate.ToString("MM/dd/yyyy")</td>
 						</tr>
@@ -88,7 +88,7 @@
 							if (Model.Showtimes.Any())
 							{
 								<tr>
-									<td><span class="fw-semibold">Sessions</span></td>
+                                                                        <td><span class="fw-semibold">Seanslar</span></td>
 									<td><span class="fw-semibold">:</span></td>
 									<td>
 										@foreach (var showtime in Model.Movie.Showtimes.Where(s => s.IsDeleted == false))
@@ -101,7 +101,7 @@
 							}
 						}
 						<tr>
-							<td><span class="fw-semibold">Overview</span></td>
+                                                        <td><span class="fw-semibold">Özet</span></td>
 							<td><span class="fw-semibold">:</span></td>
 							<td class="text-justify">@Model.Movie.Overview</td>
 						</tr>
