@@ -4,29 +4,29 @@
 @inject IHttpContextAccessor httpContextAccessor
 @model CheckoutViewModel
 @{
-	ViewData["Title"] = "Checkout";
+        ViewData["Title"] = "Ödeme";
 	ViewData["NavbarStyle"] = "bg-white border-bottom";
 }
 <partial name="_HomeNavbarPartial" />
 <div class="padding-top min-vh-100">
 	<div class="container my-4">
 		<div class="section-title d-flex align-items-center gap-4 mb-3" data-aos="fade-up">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Checkout</h2>
+                        <h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Ödeme</h2>
 			<div class="line"></div>
 		</div>
 		<div class="row mt-4">
 			<div class="col-md-7 col-lg-9 mb-4 mb-md-0 order-1">
 				<div class="box rounded-1 border overflow-hidden">
 					<div class="box-header p-3 bg-white border-bottom">
-						<h4 class="fw-semibold mb-0 text-uppercase text-primary">Contact <span class="text-black">Details</span></h4>
+                                                <h4 class="fw-semibold mb-0 text-uppercase text-primary">İletişim <span class="text-black">Bilgileri</span></h4>
 					</div>
 					<div class="box-body p-3 bg-light-subtle">
 						<form method="POST" asp-controller="Home" asp-action="CheckoutPost" autocomplete="off">
 							<div class="row g-2 mb-2">
 								<div class="col-lg-12">
-									<label asp-for="FirstName" class="form-label fw-medium">First name <span class="text-danger">*</span></label>
+                                                                        <label asp-for="FirstName" class="form-label fw-medium">Ad <span class="text-danger">*</span></label>
 									<div class="position-relative">
-										<input asp-for="FirstName" type="text" class="form-control form-control-lg" placeholder="Enter your first name here">
+                                                                        <input asp-for="FirstName" type="text" class="form-control form-control-lg" placeholder="Adınızı girin">
 										<div class="form-control-icon">
 											<i class='bx bx-user'></i>
 										</div>
@@ -34,9 +34,9 @@
 									<span asp-validation-for="FirstName" class="text-danger d-block mt-2"></span>
 								</div>
 								<div class="col-lg-12">
-									<label asp-for="LastName" class="form-label fw-medium">Last name <span class="text-danger">*</span></label>
+                                                                        <label asp-for="LastName" class="form-label fw-medium">Soyad <span class="text-danger">*</span></label>
 									<div class="position-relative">
-										<input asp-for="LastName" type="text" class="form-control form-control-lg" placeholder="Enter your last name here">
+                                                                        <input asp-for="LastName" type="text" class="form-control form-control-lg" placeholder="Soyadınızı girin">
 										<div class="form-control-icon">
 											<i class='bx bx-user'></i>
 										</div>
@@ -55,7 +55,7 @@
 								<span asp-validation-for="Email" class="text-danger d-block mt-2"></span>
 							</div>*@
 							<div class="d-grid">
-								<input type="submit" value="Pay" class="btn btn-lg btn-primary btn-block text-uppercase fw-semibold">
+                                                                <input type="submit" value="Öde" class="btn btn-lg btn-primary btn-block text-uppercase fw-semibold">
 							</div>
 						</form>
 					</div>
@@ -64,7 +64,7 @@
 			<div class="col-md-5 col-lg-3 order-2">
 				<div class="box rounded-1 border">
 					<div class="box-header p-3 bg-white border-bottom-dashed rounded-1">
-						<h5 class="fw-semibold mb-0 text-uppercase text-primary">Ticket <span class="text-black">Details</span></h5>
+                                                <h5 class="fw-semibold mb-0 text-uppercase text-primary">Bilet <span class="text-black">Bilgileri</span></h5>
 					</div>
 					<div class="box-body bg-light-subtle rounded-1 rounded-top-0 ticket">
 						<div class="row gx-1 align-items-center">

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Movie>
 @{
-	ViewData["Title"] = "All Movies";
+        ViewData["Title"] = "Tüm Filmler";
 	PaginationHelper pagination = ViewBag.Pagination;
 }
 <partial name="_AdminNavbarPartial" />
@@ -14,7 +14,7 @@
 			<div class="col-12">
 				<form method="get" asp-controller="Admin" asp-action="Movies" autocomplete="off">
 					<div class="position-relative">
-						<input type="search" name="search" id="search" class="form-control form-control-lg" placeholder="Search" value="@(ViewBag.Search ?? String.Empty)" required>
+                                                  <input type="search" name="search" id="search" class="form-control form-control-lg" placeholder="Ara" value="@(ViewBag.Search ?? String.Empty)" required>
 						<div class="form-control-icon">
 							<i class='bx bx-search'></i>
 						</div>
@@ -45,9 +45,9 @@
 		{
 			<div class="row mt-4">
 				<div class="col-12">
-					<div class="alert alert-primary fw-medium rounded-1" role="alert">
-						Movies not found
-					</div>
+                                          <div class="alert alert-primary fw-medium rounded-1" role="alert">
+                                                  Film bulunamadı
+                                          </div>
 				</div>
 			</div>
 		}
@@ -55,12 +55,12 @@
 		{
 			<nav class="mt-4">
 				<ul class="pagination justify-content-center">
-					<li class="page-item @(!(pagination.CurrentPage > 1) ? "disabled" : "")"><a class="page-link" asp-controller="Admin" asp-action="Movies" asp-route-page="@(pagination.CurrentPage - 1)" asp-route-search="@ViewBag.Search">Previous</a></li>
+                                          <li class="page-item @(!(pagination.CurrentPage > 1) ? "disabled" : "")"><a class="page-link" asp-controller="Admin" asp-action="Movies" asp-route-page="@(pagination.CurrentPage - 1)" asp-route-search="@ViewBag.Search">Önceki</a></li>
 					@for (int page = pagination.StartPage; page <= pagination.EndPage; page++)
 					{
 						<li class="page-item"><a class="page-link @(page == pagination.CurrentPage ? "active" : "")" asp-controller="Admin" asp-action="Movies" asp-route-page="@(page)" asp-route-search="@ViewBag.Search">@(page)</a></li>
 					}
-					<li class="page-item @(!(pagination.CurrentPage < pagination.TotalPages) ? "disabled" : "")"><a class="page-link" asp-controller="Admin" asp-action="Movies" asp-route-page="@(pagination.CurrentPage + 1)" asp-route-search="@ViewBag.Search">Next</a></li>
+                                          <li class="page-item @(!(pagination.CurrentPage < pagination.TotalPages) ? "disabled" : "")"><a class="page-link" asp-controller="Admin" asp-action="Movies" asp-route-page="@(pagination.CurrentPage + 1)" asp-route-search="@ViewBag.Search">Sonraki</a></li>
 				</ul>
 			</nav>
 		}

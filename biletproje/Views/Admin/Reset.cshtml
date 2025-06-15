@@ -1,13 +1,13 @@
 ﻿@model AdminResetViewModel
 @{
-	ViewData["Title"] = "Reset Password";
+        ViewData["Title"] = "Şifre Sıfırla";
 }
 <div class="bg-blob min-vh-100 d-flex align-items-center justify-content-center">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-sm-9 col-10">
 				<div class="rounded-1 border px-4 py-5 pb-4 bg-white">
-					<h2 class="fw-bold text-center mb-5 text-black"><span class="text-primary">Reset</span> Password</h2>
+                                        <h2 class="fw-bold text-center mb-5 text-black"><span class="text-primary">Şifre</span> Sıfırla</h2>
 					<form method="post" class="login-form" autocomplete="off">
 						@if (ViewBag.Error != null)
 						{
@@ -28,7 +28,7 @@
 						}
 						<div class="mb-3">
 							<div class="position-relative">
-								<input type="password" asp-for="NewPassword" class="form-control form-control-lg" placeholder="New password" required>
+                                                                <input type="password" asp-for="NewPassword" class="form-control form-control-lg" placeholder="Yeni şifre" required>
 								<div class="form-control-icon">
 									<i class='bx bx-lock-alt'></i>
 								</div>
@@ -37,7 +37,7 @@
 						</div>
 						<div class="mb-3">
 							<div class="position-relative">
-								<input type="password" asp-for="ConfirmNewPassword" class="form-control form-control-lg" placeholder="Confirm new password" required>
+                                                                <input type="password" asp-for="ConfirmNewPassword" class="form-control form-control-lg" placeholder="Yeni şifreyi onayla" required>
 								<div class="form-control-icon">
 									<i class='bx bx-lock-alt'></i>
 								</div>
@@ -47,7 +47,7 @@
 						<input asp-for="Email" type="hidden" />
 						<input asp-for="Token" type="hidden" />
 						<div class="d-grid">
-							<input type="submit" value="Reset" class="btn btn-lg btn-primary btn-block text-uppercase fw-semibold">
+                                                        <input type="submit" value="Sıfırla" class="btn btn-lg btn-primary btn-block text-uppercase fw-semibold">
 						</div>
 					</form>
 				</div>
