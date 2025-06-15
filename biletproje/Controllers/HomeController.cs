@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Stripe.Checkout;
+using System.Runtime.Versioning;
 
 namespace biletproje.Controllers
 {
@@ -121,7 +122,13 @@ namespace biletproje.Controllers
                 Session session = service.Get(HttpContext.Session.GetString("SessionId"));
                 if (session.PaymentStatus.ToLower() == "paid")
                 {
-                    var showdate = _context.Showdates.Where(s => s.Date == DateTime.Parse(HttpContext.Session.GetString("Showdate")) && s.ShowtimeId == HttpContext.Session.GetInt32("ShowtimeId")).FirstOrDefault();
+                    var showdateString = HttpContext.Session.GetString("Showdate");
+                    DateTime parsedShowdate = DateTime.Now;
+                    if (!string.IsNullOrEmpty(showdateString))
+                    {
+                        DateTime.TryParse(showdateString, out parsedShowdate);
+                    }
+                    var showdate = _context.Showdates.Where(s => s.Date == parsedShowdate && s.ShowtimeId == HttpContext.Session.GetInt32("ShowtimeId")).FirstOrDefault();
                     if (showdate != null)
                     {
                         showdate.Reserved += 1;
@@ -131,7 +138,7 @@ namespace biletproje.Controllers
                     {
                         showdate = new()
                         {
-                            Date = DateTime.Parse(HttpContext.Session.GetString("Showdate") ?? DateTime.Now.ToString()),
+                            Date = parsedShowdate,
                             Reserved = 1,
                             ShowtimeId = HttpContext.Session.GetInt32("ShowtimeId") ?? 0,
                         };
@@ -150,7 +157,7 @@ namespace biletproje.Controllers
                         TicketNumber = reservation.Id,
                         FullName = HttpContext.Session.GetString("FirstName") + " " + HttpContext.Session.GetString("LastName"),
                         MovieTitle = _context.Movies.First(m => m.Id == _context.Showtimes.First(s => s.Id == HttpContext.Session.GetInt32("ShowtimeId")).MovieId).Title,
-                        Date = DateTime.Parse(HttpContext.Session.GetString("Showdate") ?? DateTime.Now.ToString()),
+                        Date = parsedShowdate,
                         Time = _context.Showtimes.First(s => s.Id == HttpContext.Session.GetInt32("ShowtimeId")).Time,
                     };
                     HttpContext.Session.Clear();
@@ -159,12 +166,14 @@ namespace biletproje.Controllers
             }
             return NotFound();
         }
+        [SupportedOSPlatform("windows")]
         public IActionResult GenerateBarcode(string toEncode)
         {
             Barcode barcode = new();
             Image image = barcode.Encode(TYPE.CODE39Extended, toEncode, Color.Black, Color.White, 2500, 1000);
             return File(ConvertImageToByte(image), "image/jpeg");
         }
+        [SupportedOSPlatform("windows")]
         private static byte[] ConvertImageToByte(Image image)
         {
             using MemoryStream memoryStream = new();
